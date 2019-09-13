@@ -1,6 +1,6 @@
-# VTEX IO Base Component
+# VTEX IO Store Component Template
 
-This demo component shows you how to make a simple yet complete VTEX IO component.
+This demo component shows you how to make a simple yet complete VTEX IO store component.
 
 It shows a simple demonstration of the following features:
 
