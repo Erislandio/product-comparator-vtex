@@ -4,5 +4,6 @@
   "editor.base-store-component.title.title": "Title",
   "editor.base-store-component.title.description": "Specify a custom title",
   "base.title": "Hello, World!!",
-  "base.change-value": "Change your value: {value}"
+  "base.change-value": "Change your value: {value}",
+  "example": "This is an example"
 }
