@@ -3,6 +3,6 @@
   "editor.base-store-component.description": "Description of IO Base App component",
   "editor.base-store-component.title.title": "Title of title property",
   "editor.base-store-component.title.description": "Description of title property",
-  "base.title": "Base title message to be shown when title is not provided via CMS",
-  "base.change-value": "Text to be shown beside input component typed value"
+  "store.product-comparator.title": "Compare e Encontre o Produto Ideal",
+  "store.product-comparator.subtitle": "Explore as opções abaixo e compare os modelos de smartphones em qualidade de imagem, exibição, velocidade e muito mais."
 }

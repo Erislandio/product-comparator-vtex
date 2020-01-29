@@ -1,0 +1,55 @@
+query productSearch($query: String!){
+  productSearch(query: $query) {
+    products {
+      brand
+      brandId
+      cacheId
+      categoryId
+      description
+      link
+      linkText
+      productId
+      productName
+      productReference
+      titleTag
+      metaTagDescription
+      jsonSpecifications
+      items {
+        itemId
+        name
+        nameComplete
+        complementName
+        ean
+        measurementUnit
+        unitMultiplier
+        images {
+          cacheId
+          imageId
+          imageLabel
+          imageTag
+          imageUrl
+          imageText
+        }
+        variations {
+          name
+        }
+        sellers {
+          sellerId
+          sellerName
+          addToCartLink
+          sellerDefault
+          commertialOffer {
+            Price
+            ListPrice
+            PriceWithoutDiscount
+            RewardValue
+            PriceValidUntil
+            AvailableQuantity
+            Tax
+            CacheVersionUsedToCallCheckout
+          }
+        }
+      }
+    }
+  }
+}

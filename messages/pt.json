@@ -3,7 +3,6 @@
   "editor.base-store-component.description": "Um componente de demonstração para apps do VTEX IO",
   "editor.base-store-component.title.title": "Título",
   "editor.base-store-component.title.description": "Especifique um título personalizado",
-  "base.title": "Olá, Mundo!!",
-  "base.change-value": "Troque seu valor: {value}",
-  "example": "Isto é um exemplo"
+  "store.product-comparator.title": "Compare e Encontre o Produto Ideal",
+  "store.product-comparator.subtitle": "Explore as opções abaixo e compare os modelos de smartphones em qualidade de imagem, exibição, velocidade e muito mais."
 }

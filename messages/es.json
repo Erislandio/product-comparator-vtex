@@ -3,7 +3,6 @@
   "editor.base-store-component.description": "Un componente de demostración para aplicaciones IO.",
   "editor.base-store-component.title.title": "Título",
   "editor.base-store-component.title.description": "Especifique un título personalizado",
-  "base.title": "¡Hola Mundo!",
-  "base.change-value": "Cambia tu valor: {value}",
-  "example": "Esto es un ejemplo"
+  "store.product-comparator.title": "Compara y encuentra el producto ideal",
+  "store.product-comparator.subtitle": "Explore las opciones a continuación y compare los modelos de teléfonos inteligentes en calidad imagen, pantalla, velocidad y más."
 }
