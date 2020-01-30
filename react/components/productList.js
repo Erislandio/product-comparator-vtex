@@ -29,31 +29,35 @@ export const ProductList = ({ edit, item, products, loading, id }) => {
 		];
 
 		if (edit) {
-			const getNextArrayAvariable = state
-				.filter((item) => {
-					return item.id !== id;
-				})
-				.map((item) => {
-					if (item.selected) {
-						return { ...item, active: false };
-					}
+			const getNextArrayAvariable = nextArray.map((item) => {
+				if (item.selected) {
+					return { ...item };
+				}
 
-					return { ...item, active: true };
-				});
+				return { ...item, active: true };
+			});
 
 			setState([
 				{
 					...item,
+					active: false,
 					selected: product,
+					edit: false,
 					image: parseImageTag(product.items[0].images[0].imageTag, true)
 				},
 				...getNextArrayAvariable,
-				...state.filter((item) => {
-					return item.id !== id;
-				})
-			]);
+				...state
+					.filter((item) => {
+						return item.id !== id;
+					})
+					.map((item) => {
+						if (!item.selected) {
+							return { ...item, active: true };
+						}
 
-			console.log(getNextArrayAvariable);
+						return { ...item };
+					})
+			]);
 		} else {
 			setState(newState);
 		}
