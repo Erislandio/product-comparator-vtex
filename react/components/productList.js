@@ -4,7 +4,7 @@ import { parseImageTag } from './utils';
 import { LoadingSamsung } from './utils/loading';
 import { ProductCompareContext } from './context';
 
-export const ProductList = ({ item, products, loading, id }) => {
+export const ProductList = ({ edit, item, products, loading, id }) => {
 	const { setState, state } = useContext(ProductCompareContext);
 
 	const onSelectProduct = (product) => {
@@ -27,7 +27,36 @@ export const ProductList = ({ item, products, loading, id }) => {
 				return item.id !== id;
 			})
 		];
-		setState(newState);
+
+		if (edit) {
+			const getNextArrayAvariable = state
+				.filter((item) => {
+					return item.id !== id;
+				})
+				.map((item) => {
+					if (item.selected) {
+						return { ...item, active: false };
+					}
+
+					return { ...item, active: true };
+				});
+
+			setState([
+				{
+					...item,
+					selected: product,
+					image: parseImageTag(product.items[0].images[0].imageTag, true)
+				},
+				...getNextArrayAvariable,
+				...state.filter((item) => {
+					return item.id !== id;
+				})
+			]);
+
+			console.log(getNextArrayAvariable);
+		} else {
+			setState(newState);
+		}
 	};
 
 	return (

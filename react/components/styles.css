@@ -45,6 +45,7 @@
   align-items: center;
   flex-direction: column;
   position: relative;
+  min-height: 400px;
 }
 
 .productPlaceholder img {
@@ -119,7 +120,7 @@
   background: #fff;
   max-height: 300px;
   overflow-y: scroll;
-  top: 70%;
+  top: 63%;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
@@ -128,6 +129,7 @@
   -o-transform: translateX(-50%);
   padding: 0px;
   margin: 0px;
+  z-index: 100000;
 }
 
 .productList {
@@ -174,4 +176,55 @@
 
 .productListWrapper::-webkit-scrollbar-thumb {
   background-color: #b5b5b5;
+}
+
+.productPlaceholder :global(.remove-item) {
+  position: absolute;
+  top: 55px;
+  right: 0px;
+}
+
+.productPlaceholder :global(.remove-item) button {
+  background: #1428a0;
+  font-family: 'SamsungSharpSans' sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.65;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.productPlaceholder :global(.product) {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  max-width: 200px;
+}
+
+.productPlaceholder>div h3 {
+  font-family: SamsungSharpSans;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.98;
+  letter-spacing: normal;
+  text-align: center;
+  color: #010101;
 }

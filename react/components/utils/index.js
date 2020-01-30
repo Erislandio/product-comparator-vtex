@@ -1,8 +1,16 @@
 const parseImageTag = (imageTag, productImage) => {
-	const width = productImage ? '176' : '70';
-	const height = productImage ? '329' : '80';
+	if (productImage) {
+		return imageTag
+			.split(/"(.*?)"/gi)[1]
+			.replace('~/', '/')
+			.replace(/#width#/gi, '600')
+			.replace(/#height#/gi, '600');
+	}
 
-	const image = imageTag.replace('#width#', width).replace('#height#', height).replace('~/arquivos', '/arquivos');
+	const width = '70';
+	const height = '80';
+
+	const image = imageTag.replace(/#width#/gi, width).replace(/#height#/gi, height).replace('~/arquivos', '/arquivos');
 	return image;
 };
 

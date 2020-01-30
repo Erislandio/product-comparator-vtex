@@ -14,13 +14,20 @@ export const ProductListPlaceholder = () => {
 					return (
 						<div className="relative">
 							<ProductPlaceholder
-								product={item.product}
+								selected={item.selected}
 								active={item.active}
 								value={item.value}
 								id={item.id}
 								image={item.image}
+								item={item}
 							/>
-							<ProductList item={item} products={item.products} loading={item.loading} id={item.id} />
+							<ProductList
+								edit={item.edit}
+								item={item}
+								products={item.products}
+								loading={item.loading}
+								id={item.id}
+							/>
 						</div>
 					);
 				})}

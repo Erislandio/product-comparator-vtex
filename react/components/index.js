@@ -12,39 +12,34 @@ const ProductComparator = () => {
 			value: '',
 			active: true,
 			products: [],
-			error: false,
 			selected: null,
 			loading: false,
-			image: null
+			image: null,
+			edit: false
 		},
 		{
 			id: 2,
 			value: '',
 			active: false,
 			products: [],
-			error: false,
 			selected: null,
 			loading: false,
-			image: null
+			image: null,
+			edit: false
 		},
 		{
 			id: 3,
 			value: '',
 			active: false,
 			products: [],
-			error: false,
 			selected: null,
 			loading: false,
-			image: null
+			image: null,
+			edit: false
 		}
 	]);
 
-	useEffect(
-		() => {
-			console.log(state);
-		},
-		[ state ]
-	);
+	useEffect(() => {}, [ state ]);
 
 	return (
 		<ProductCompareContext.Provider
