@@ -3,7 +3,6 @@ import styles from './styles.css';
 import { ProductPlaceholder } from './productPlaceholder';
 import { ProductCompareContext } from './context';
 import { ProductList } from './productList';
-import { parseImageTag } from './utils';
 
 export const ProductListPlaceholder = () => {
 	const { state } = useContext(ProductCompareContext);
@@ -11,11 +10,17 @@ export const ProductListPlaceholder = () => {
 	return (
 		<div className={styles.productListPlaceholder}>
 			{state &&
-				state.map((item) => {
+				state.sort((a, b) => a.id - b.id).map((item) => {
 					return (
 						<div className="relative">
-							<ProductPlaceholder active={item.active} value={item.value} id={item.id} />
-							<ProductList products={item.products} loading={item.loading} />
+							<ProductPlaceholder
+								product={item.product}
+								active={item.active}
+								value={item.value}
+								id={item.id}
+								image={item.image}
+							/>
+							<ProductList item={item} products={item.products} loading={item.loading} id={item.id} />
 						</div>
 					);
 				})}

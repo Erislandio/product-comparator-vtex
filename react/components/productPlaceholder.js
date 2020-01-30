@@ -4,7 +4,7 @@ import styles from './styles.css';
 import { ProductCompareContext } from './context';
 import axios from 'axios';
 
-export const ProductPlaceholder = ({ id, active }) => {
+export const ProductPlaceholder = ({ image, product, id, active }) => {
 	const { state, setState } = useContext(ProductCompareContext);
 
 	const searchProduct = async (value) => {
@@ -34,7 +34,11 @@ export const ProductPlaceholder = ({ id, active }) => {
 	return (
 		<div className={`${styles.productPlaceholder} ${active ? ' active ' : ' '}`}>
 			<div className="product-placeholder">
-				<img src="https://samsungbr.vteximg.com.br/arquivos/phone-placeholder.png" />
+				{image ? (
+					<div dangerouslySetInnerHTML={{ __html: image }} />
+				) : (
+					<img src="https://samsungbr.vteximg.com.br/arquivos/phone-placeholder.png" />
+				)}
 				{active ? (
 					<div className="ph2 flex items-center space-between">
 						<Input

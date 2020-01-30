@@ -14,7 +14,8 @@ const ProductComparator = () => {
 			products: [],
 			error: false,
 			selected: null,
-			loading: false
+			loading: false,
+			image: null
 		},
 		{
 			id: 2,
@@ -23,7 +24,8 @@ const ProductComparator = () => {
 			products: [],
 			error: false,
 			selected: null,
-			loading: false
+			loading: false,
+			image: null
 		},
 		{
 			id: 3,
@@ -32,7 +34,8 @@ const ProductComparator = () => {
 			products: [],
 			error: false,
 			selected: null,
-			loading: false
+			loading: false,
+			image: null
 		}
 	]);
 
