@@ -3,6 +3,7 @@ import { Input } from 'vtex.styleguide';
 import styles from './styles.css';
 import { ProductCompareContext } from './context';
 import axios from 'axios';
+import { ProductCard } from './productCard';
 
 export const ProductPlaceholder = ({ item, image, selected, id, active }) => {
 	const { state, setState } = useContext(ProductCompareContext);
@@ -61,12 +62,7 @@ export const ProductPlaceholder = ({ item, image, selected, id, active }) => {
 	return (
 		<div className={`${styles.productPlaceholder} ${active ? ' active ' : ' '}`}>
 			{image ? (
-				<div className="product relative w-100 h-100" style={{ background: `url(${image})` }}>
-					<h3>{selected.productName}</h3>
-					<span className="remove-item">
-						<button onClick={handleRemove}>X</button>
-					</span>
-				</div>
+				<ProductCard selected={selected} image={image} handleRemove={handleRemove} />
 			) : (
 				<img src="https://samsungbr.vteximg.com.br/arquivos/phone-placeholder.png" />
 			)}

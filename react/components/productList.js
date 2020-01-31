@@ -10,9 +10,9 @@ export const ProductList = ({ edit, item, products, loading, id }) => {
 	const onSelectProduct = (product) => {
 		const mainProduct = state[0].selected ? state[0].selected : null;
 
-		// if (mainProduct !== null && product.cate[0] !== mainProduct.categoriesIds[0]) {
-		// 	return showToast('Produtos de categorias diferentes!');
-		// }
+		if (mainProduct !== null && product.categories[1] !== mainProduct.categories[1]) {
+			return showToast('Produtos de categorias diferentes!', { keepAfterUpdate: '' });
+		}
 
 		const nextArray = state.splice(id, 1);
 		const setNextArray = nextArray.length
@@ -42,6 +42,14 @@ export const ProductList = ({ edit, item, products, loading, id }) => {
 
 				return { ...item, active: true };
 			});
+
+			if (
+				nextArray.length &&
+				nextArray[0].selected &&
+				product.categories[1] !== nextArray[0].selected.categories[1]
+			) {
+				return showToast('Produtos de categorias diferentes!', { keepAfterUpdate: '' });
+			}
 
 			setState([
 				{
@@ -73,7 +81,7 @@ export const ProductList = ({ edit, item, products, loading, id }) => {
 						<h3>Produtos encontrados: </h3>
 						{products.map((product) => {
 							return (
-								<li key={product.productName} onClick={() => onSelectProduct(product)}>
+								<li key={product.productId} onClick={() => onSelectProduct(product)}>
 									<div className={styles.productItem}>
 										<div
 											dangerouslySetInnerHTML={{

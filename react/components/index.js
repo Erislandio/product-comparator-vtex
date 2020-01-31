@@ -16,7 +16,8 @@ const ProductComparator = ({ showToast }) => {
 			selected: null,
 			loading: false,
 			image: null,
-			edit: false
+			edit: false,
+			show: false
 		},
 		{
 			id: 2,
@@ -26,7 +27,8 @@ const ProductComparator = ({ showToast }) => {
 			selected: null,
 			loading: false,
 			image: null,
-			edit: false
+			edit: false,
+			show: false
 		},
 		{
 			id: 3,
@@ -36,7 +38,8 @@ const ProductComparator = ({ showToast }) => {
 			selected: null,
 			loading: false,
 			image: null,
-			edit: false
+			edit: false,
+			show: false
 		}
 	]);
 
