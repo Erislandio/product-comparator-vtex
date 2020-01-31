@@ -17,15 +17,25 @@ export const ProductPlaceholder = ({ item, image, selected, id, active }) => {
 
 		const { data } = await searchProduct(e.target.value);
 
+		const filterId = state
+			.filter((item) => item.selected)
+			.reduce((accumulator, currentValue) => accumulator.concat(currentValue.selected.productId), []);
+
+		const productsFilter = data.filter((el) => {
+			return filterId.every((f) => {
+				return f !== el.productId;
+			});
+		});
+
 		setState([
 			{
 				...item,
 				id,
 				value,
 				active: true,
-				products: value ? data : [],
+				products: value ? productsFilter : [],
 				selected: null,
-				loading: data.length === 0 ? true : false
+				loading: productsFilter.length === 0 ? true : false
 			},
 			...newArray
 		]);
@@ -42,13 +52,9 @@ export const ProductPlaceholder = ({ item, image, selected, id, active }) => {
 				loading: false,
 				edit: true
 			},
-			...state
-				.filter((value) => {
-					return value.id !== id;
-				})
-				.map((item) => {
-					return { ...item, active: false };
-				})
+			...state.filter((value) => value.id !== id).map((item) => {
+				return { ...item, active: false, products: [] };
+			})
 		]);
 	};
 

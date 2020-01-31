@@ -12,7 +12,7 @@ export const ProductListPlaceholder = () => {
 			{state &&
 				state.sort((a, b) => a.id - b.id).map((item) => {
 					return (
-						<div className="relative">
+						<div className="relative" key={item.id}>
 							<ProductPlaceholder
 								selected={item.selected}
 								active={item.active}

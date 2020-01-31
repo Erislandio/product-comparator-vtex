@@ -4,8 +4,9 @@ import { HeaderPage } from './headerPage';
 import { ProductCompareContext } from './context';
 import { ProductListPlaceholder } from './productPlaceholderList';
 import { ButtonWrapper } from './button';
+import { ToastProvider, withToast } from 'vtex.styleguide';
 
-const ProductComparator = () => {
+const ProductComparator = ({ showToast }) => {
 	const [ state, setState ] = useState([
 		{
 			id: 1,
@@ -39,22 +40,30 @@ const ProductComparator = () => {
 		}
 	]);
 
-	useEffect(() => {}, [ state ]);
+	useEffect(
+		() => {
+			console.log(state);
+		},
+		[ state ]
+	);
 
 	return (
 		<ProductCompareContext.Provider
 			value={{
 				state,
-				setState
+				setState,
+				showToast
 			}}
 		>
-			<Wrapper>
-				<HeaderPage />
-				<ProductListPlaceholder />
-				<ButtonWrapper />
-			</Wrapper>
+			<ToastProvider positioning="window">
+				<Wrapper>
+					<HeaderPage />
+					<ProductListPlaceholder />
+					<ButtonWrapper />
+				</Wrapper>
+			</ToastProvider>
 		</ProductCompareContext.Provider>
 	);
 };
 
-export default ProductComparator;
+export default withToast(ProductComparator);

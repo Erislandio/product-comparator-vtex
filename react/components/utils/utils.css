@@ -1,5 +1,5 @@
 .spinner {
-    display: block;
+    max-width: 100px;
 }
 
 .spinner>div {
