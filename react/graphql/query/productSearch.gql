@@ -1,18 +1,13 @@
-query productSearch($query: String!){
+query productSearch($query: String!) {
   productSearch(query: $query) {
     products {
-      brand
-      brandId
       cacheId
-      categoryId
+      categories
       description
-      link
       linkText
       productId
       productName
       productReference
-      titleTag
-      metaTagDescription
       jsonSpecifications
       items {
         itemId
@@ -20,8 +15,14 @@ query productSearch($query: String!){
         nameComplete
         complementName
         ean
-        measurementUnit
-        unitMultiplier
+        productSpecifications {
+          fieldName
+          fieldValues
+        }
+        skuSpecifications {
+          fieldName
+          fieldValues
+        }
         images {
           cacheId
           imageId
@@ -32,21 +33,21 @@ query productSearch($query: String!){
         }
         variations {
           name
+          values
         }
         sellers {
           sellerId
           sellerName
-          addToCartLink
-          sellerDefault
           commertialOffer {
+            teasers {
+              name
+            }
             Price
             ListPrice
             PriceWithoutDiscount
             RewardValue
             PriceValidUntil
             AvailableQuantity
-            Tax
-            CacheVersionUsedToCallCheckout
           }
         }
       }

@@ -7,6 +7,7 @@
     "@vtex/css-handles": "^1.0.0",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
+    "debounce": "^1.2.0",
     "graphql": "^14.6.0",
     "lodash": "^4.17.15",
     "ramda": "^0.26.1",
@@ -29,7 +30,9 @@
     "eslint-config-vtex-react": "^4.1.0",
     "prettier": "^1.18.2",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "3.7.3"
+    "typescript": "3.7.3",
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.90.2/public/@types/vtex.render-runtime",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.108.4/public/@types/vtex.styleguide"
   },
   "version": "0.2.2"
 }

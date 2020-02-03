@@ -1,0 +1,53 @@
+.productPriceContent :global(.price) {
+  font-family: 'SamsungOne', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+}
+
+.productPriceContent :global(.discount-price) > div {
+  font-family: 'SamsungOne', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #545454;
+}
+
+.productPriceContent :global(.discount-flag) {
+  font-family: 'SamsungOne';
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #00b3e3;
+}
+.collapsible {
+  width: 100%;
+}
+
+.collapsible svg {
+  display: none !important;
+}
+
+.skuSpecifications {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.skuSpecifications >div {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 20px;
+}
